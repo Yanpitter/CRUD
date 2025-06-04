@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 //Setar a biblioteca do MySQL
 using MySql.Data.MySqlClient;
@@ -22,7 +24,6 @@ namespace CRUD
 
         // Variável de conexão com o banco de dados
         MySqlConnection Conexao;
-        //ff
         // String de conexão com o banco de dados
         string connString = "datasource=localhost;username=root;password=;database=db_agenda";
 
@@ -54,24 +55,47 @@ namespace CRUD
 
             // Evento que carrega os contatos do banco de dados ao iniciar o formulário
             CarregarContatos();
+        }
 
-        }
-        private bool EmailValido(string email)
+        private bool EmailValido(string email) // Método que verifica se o e-mail é válido e se contém um domínio (ex: @gmail.com)
         {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
+            // Expressão regular padrão para e-mails válidos:
+            // ^                 => início da string
+            // [a-zA-Z0-9._%+-]+ => letras, números e alguns símbolos válidos antes do @
+            // @                 => obrigatório
+            // [a-zA-Z0-9.-]+    => domínio (ex: gmail)
+            // \.                => ponto literal (ex: .com)
+            // [a-zA-Z]{2,}      => extensão (ex: com, org, br)
+            // $                 => fim da string
+            string padraoEmail = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            // Verifica se o e-mail segue o padrão definido acima
+            return System.Text.RegularExpressions.Regex.IsMatch(email, padraoEmail);
         }
+
+
 
         //Evento do botão Salvar
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            // RF7 - Verificar se os campos estão preenchidos
+            if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+                string.IsNullOrWhiteSpace(txtTelefone.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos antes de salvar.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Verificar se o e-mail é válido // RF5 - Validar se o e-mail digitado é válido
+            if (!EmailValido(txtEmail.Text))
+            {
+                MessageBox.Show("Digite um e-mail válido. Ex: fulano@gmail.com", "E-mail inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return;
+            }
+
+
             try
             {
 
