@@ -5,9 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 //Setar a biblioteca do MySQL
 using MySql.Data.MySqlClient;
@@ -19,7 +21,6 @@ namespace CRUD
         
         // Variável de conexão com o banco de dados
         MySqlConnection Conexao;
-        //ff
         // String de conexão com o banco de dados
         string connString = "datasource=localhost;username=root;password=;database=db_agenda";
 
@@ -46,8 +47,8 @@ namespace CRUD
 
             // Evento que carrega os contatos do banco de dados ao iniciar o formulário
             CarregarContatos();
-
         }
+
         private bool EmailValido(string email)
         {
             try
@@ -61,9 +62,18 @@ namespace CRUD
             }
         }
 
+
+
         //Evento do botão Salvar
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            // Verificar se o e-mail é válido
+            if (!EmailValido(txtEmail.Text))
+            {
+                MessageBox.Show("E-mail inválido. Por favor, verifique o formato.");
+                return; // Cancela o salvamento
+            }
+
             try
             {
 
