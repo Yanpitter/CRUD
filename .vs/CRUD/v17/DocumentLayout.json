@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|d:\\users\\1031936\\onedrive - senac em minas - edu\\\u00E1rea de trabalho\\crud\\crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|solutionrelative:crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|d:\\users\\1031936\\onedrive - senac em minas - edu\\\u00E1rea de trabalho\\crud\\crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|solutionrelative:crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|d:\\users\\1031936\\onedrive - senac em minas - edu\\\u00E1rea de trabalho\\crud\\crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|solutionrelative:crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\CRUD\\Form1.cs",
               "RelativeDocumentMoniker": "CRUD\\Form1.cs",
               "ToolTip": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\CRUD\\Form1.cs",
               "RelativeToolTip": "CRUD\\Form1.cs",
-              "ViewState": "AgIAAB8BAAAAAAAAAAAYwOQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-04T00:23:50.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\CRUD\\Form1.cs",
               "RelativeDocumentMoniker": "CRUD\\Form1.cs",

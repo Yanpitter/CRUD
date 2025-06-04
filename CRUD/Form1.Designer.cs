@@ -40,6 +40,8 @@
             btnEditar = new Button();
             btnExcluir = new Button();
             mtxTelefone = new MaskedTextBox();
+            btnAnterior = new Button();
+            btnProxima = new Button();
             SuspendLayout();
             // 
             // label1
@@ -150,11 +152,31 @@
             mtxTelefone.Size = new Size(100, 23);
             mtxTelefone.TabIndex = 13;
             // 
+            // btnAnterior
+            // 
+            btnAnterior.Location = new Point(385, 330);
+            btnAnterior.Name = "btnAnterior";
+            btnAnterior.Size = new Size(75, 23);
+            btnAnterior.TabIndex = 14;
+            btnAnterior.Text = "Anterior";
+            btnAnterior.UseVisualStyleBackColor = true;
+            // 
+            // btnProxima
+            // 
+            btnProxima.Location = new Point(466, 330);
+            btnProxima.Name = "btnProxima";
+            btnProxima.Size = new Size(75, 23);
+            btnProxima.TabIndex = 15;
+            btnProxima.Text = "Próxima";
+            btnProxima.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(847, 376);
+            Controls.Add(btnProxima);
+            Controls.Add(btnAnterior);
             Controls.Add(mtxTelefone);
             Controls.Add(btnExcluir);
             Controls.Add(btnEditar);
@@ -189,5 +211,7 @@
         private Button btnEditar;
         private Button btnExcluir;
         private MaskedTextBox mtxTelefone;
+        private Button btnAnterior;
+        private Button btnProxima;
     }
 }

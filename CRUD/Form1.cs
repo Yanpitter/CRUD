@@ -28,6 +28,7 @@ namespace CRUD
         private int? id_contato_selecionado = null;
         public Form1()
         {
+            #region Configurações da ListView
             // Inicializa os componentes do list
             InitializeComponent();
 
@@ -43,8 +44,10 @@ namespace CRUD
             lstContatos.Columns.Add("E-mail", 150, HorizontalAlignment.Left);
             lstContatos.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
             btnEditar.Enabled = false;
+            #endregion
 
-            
+            txtNome.MaxLength = 150;
+            txtEmail.MaxLength = 150;
 
             // Evento que carrega os contatos do banco de dados ao iniciar o formulário
             CarregarContatos();
