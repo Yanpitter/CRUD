@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CRUD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+79b3aa9df102d4ff326918da6662117087a19caf")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9fcdd6cd1bc0afffdf194b02bd7517ac003e9d1")]
->>>>>>> grupo2
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a45c70511054b03be14cf7df739039979467a36")]
 [assembly: System.Reflection.AssemblyProductAttribute("CRUD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CRUD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

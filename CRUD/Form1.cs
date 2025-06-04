@@ -80,7 +80,7 @@ namespace CRUD
         {
             // RF7 - Verificar se os campos estão preenchidos
             if (string.IsNullOrWhiteSpace(txtNome.Text) ||
-                string.IsNullOrWhiteSpace(txtTelefone.Text) ||
+                string.IsNullOrWhiteSpace(mtxTelefone.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text))
             {
                 MessageBox.Show("Todos os campos devem ser preenchidos antes de salvar.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
