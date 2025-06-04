@@ -16,6 +16,9 @@ namespace CRUD
 {
     public partial class Form1 : Form
     {
+        private int paginaAtual = 1;
+        private int totalPaginas = 1;
+        private int registrosPorPagina = 10;
 
         // Variável de conexão com o banco de dados
         MySqlConnection Conexao;
@@ -144,18 +147,26 @@ namespace CRUD
         }
 
         //Método para carregar os contatos do banco de dados e exibi-los na lista lstContatos
-        private void CarregarContatos()
+        private void CarregarContatos(int pagina = 1)
         {
             try
             {
                 Conexao = new MySqlConnection(connString);
+
+                // Conta o total de registros para calcular o total de páginas
+                string sqlCount = "SELECT COUNT(*) FROM contatos";
+                MySqlCommand cmdCount = new MySqlCommand(sqlCount, Conexao);
+                Conexao.Open();
+                int totalRegistros = Convert.ToInt32(cmdCount.ExecuteScalar());
+                totalPaginas = (int)Math.Ceiling((double)totalRegistros / registrosPorPagina);
+
+                int offset = (pagina - 1) * registrosPorPagina;
                 // Cria a consulta SQL para selecionar todos os contatos e ordená-los
                 // por ID em ordem decrescente
-                string sql = "SELECT * FROM contatos ORDER BY id DESC ";
+                string sql = $"SELECT * FROM contatos ORDER BY id DESC LIMIT {registrosPorPagina} OFFSET {offset}";
 
                 // Cria um comando MySqlCommand com a consulta SQL e a conexão
                 MySqlCommand comando = new MySqlCommand(sql, Conexao);
-                Conexao.Open();
                 MySqlDataReader reader = comando.ExecuteReader();
 
                 // Limpa a lista de contatos antes de adicionar os resultados da consulta
@@ -346,6 +357,25 @@ namespace CRUD
                 {
                     Conexao.Close();
                 }
+            }
+        }
+        // Carrega 10 registro anteriores
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (paginaAtual > 1)
+            {
+                paginaAtual--;
+                CarregarContatos(paginaAtual);
+            }
+        }
+
+        // Carrega os proximos 10 registro
+        private void btnProxima_Click(object sender, EventArgs e)
+        {
+            if (paginaAtual < totalPaginas)
+            {
+                paginaAtual++;
+                CarregarContatos(paginaAtual);
             }
         }
     }

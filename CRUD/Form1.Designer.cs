@@ -109,6 +109,7 @@
             // 
             // txtLocalizar
             // 
+            txtLocalizar.BorderStyle = BorderStyle.FixedSingle;
             txtLocalizar.Location = new Point(373, 28);
             txtLocalizar.Name = "txtLocalizar";
             txtLocalizar.Size = new Size(462, 23);
@@ -160,6 +161,7 @@
             btnAnterior.TabIndex = 14;
             btnAnterior.Text = "Anterior";
             btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
             // 
             // btnProxima
             // 
@@ -169,6 +171,7 @@
             btnProxima.TabIndex = 15;
             btnProxima.Text = "Próxima";
             btnProxima.UseVisualStyleBackColor = true;
+            btnProxima.Click += btnProxima_Click;
             // 
             // Form1
             // 
