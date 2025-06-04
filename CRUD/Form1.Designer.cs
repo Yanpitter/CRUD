@@ -32,15 +32,16 @@
             label2 = new Label();
             label3 = new Label();
             txtNome = new TextBox();
-            txtTelefone = new TextBox();
             txtEmail = new TextBox();
             btnSalvar = new Button();
             lstContatos = new ListView();
             txtLocalizar = new TextBox();
-            btnConsultar = new Button();
             label4 = new Label();
             btnEditar = new Button();
             btnExcluir = new Button();
+            mtxTelefone = new MaskedTextBox();
+            btnAnterior = new Button();
+            btnProxima = new Button();
             SuspendLayout();
             // 
             // label1
@@ -72,20 +73,15 @@
             // 
             // txtNome
             // 
+            txtNome.BorderStyle = BorderStyle.FixedSingle;
             txtNome.Location = new Point(12, 27);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(339, 23);
             txtNome.TabIndex = 3;
             // 
-            // txtTelefone
-            // 
-            txtTelefone.Location = new Point(12, 71);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(191, 23);
-            txtTelefone.TabIndex = 4;
-            // 
             // txtEmail
             // 
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Location = new Point(12, 115);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(339, 23);
@@ -104,29 +100,21 @@
             // 
             // lstContatos
             // 
-            lstContatos.Location = new Point(373, 71);
+            lstContatos.Location = new Point(373, 57);
             lstContatos.Name = "lstContatos";
-            lstContatos.Size = new Size(450, 293);
+            lstContatos.Size = new Size(462, 307);
             lstContatos.TabIndex = 7;
             lstContatos.UseCompatibleStateImageBehavior = false;
             lstContatos.SelectedIndexChanged += lstContatos_SelectedIndexChanged_1;
             // 
             // txtLocalizar
             // 
+            txtLocalizar.BorderStyle = BorderStyle.FixedSingle;
             txtLocalizar.Location = new Point(373, 28);
             txtLocalizar.Name = "txtLocalizar";
-            txtLocalizar.Size = new Size(331, 23);
+            txtLocalizar.Size = new Size(462, 23);
             txtLocalizar.TabIndex = 8;
-            // 
-            // btnConsultar
-            // 
-            btnConsultar.Location = new Point(710, 27);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(113, 23);
-            btnConsultar.TabIndex = 9;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = true;
-            btnConsultar.Click += btnConsultar_Click;
+            txtLocalizar.TextChanged += txtLocalizar_TextChanged;
             // 
             // label4
             // 
@@ -157,20 +145,49 @@
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
+            // mtxTelefone
+            // 
+            mtxTelefone.Location = new Point(12, 71);
+            mtxTelefone.Mask = "(99) 00000-0000";
+            mtxTelefone.Name = "mtxTelefone";
+            mtxTelefone.Size = new Size(100, 23);
+            mtxTelefone.TabIndex = 13;
+            // 
+            // btnAnterior
+            // 
+            btnAnterior.Location = new Point(385, 330);
+            btnAnterior.Name = "btnAnterior";
+            btnAnterior.Size = new Size(75, 23);
+            btnAnterior.TabIndex = 14;
+            btnAnterior.Text = "Anterior";
+            btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
+            // 
+            // btnProxima
+            // 
+            btnProxima.Location = new Point(466, 330);
+            btnProxima.Name = "btnProxima";
+            btnProxima.Size = new Size(75, 23);
+            btnProxima.TabIndex = 15;
+            btnProxima.Text = "Próxima";
+            btnProxima.UseVisualStyleBackColor = true;
+            btnProxima.Click += btnProxima_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(847, 376);
+            Controls.Add(btnProxima);
+            Controls.Add(btnAnterior);
+            Controls.Add(mtxTelefone);
             Controls.Add(btnExcluir);
             Controls.Add(btnEditar);
             Controls.Add(label4);
-            Controls.Add(btnConsultar);
             Controls.Add(txtLocalizar);
             Controls.Add(lstContatos);
             Controls.Add(btnSalvar);
             Controls.Add(txtEmail);
-            Controls.Add(txtTelefone);
             Controls.Add(txtNome);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -189,14 +206,15 @@
         private Label label2;
         private Label label3;
         private TextBox txtNome;
-        private TextBox txtTelefone;
         private TextBox txtEmail;
         private Button btnSalvar;
         private ListView lstContatos;
         private TextBox txtLocalizar;
-        private Button btnConsultar;
         private Label label4;
         private Button btnEditar;
         private Button btnExcluir;
+        private MaskedTextBox mtxTelefone;
+        private Button btnAnterior;
+        private Button btnProxima;
     }
 }
