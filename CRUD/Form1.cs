@@ -16,7 +16,7 @@ namespace CRUD
 {
     public partial class Form1 : Form
     {
-        
+
         // Variável de conexão com o banco de dados
         MySqlConnection Conexao;
         //ff
@@ -43,6 +43,8 @@ namespace CRUD
             lstContatos.Columns.Add("E-mail", 150, HorizontalAlignment.Left);
             lstContatos.Columns.Add("Telefone", 150, HorizontalAlignment.Left);
             btnEditar.Enabled = false;
+
+            
 
             // Evento que carrega os contatos do banco de dados ao iniciar o formulário
             CarregarContatos();
@@ -83,14 +85,14 @@ namespace CRUD
                 // Se for nulo, insere um novo contato; caso contrário, atualiza o contato existente
                 if (id_contato_selecionado == null)
                 {
-                    cmd.CommandText = "INSERT INTO Contatos (nome, email, telefone) " +
+                    cmd.CommandText = "INSERT INTO contatos (nome, email, telefone) " +
                                       "VALUES " +
                                       "(@nome, @email, @telefone) ";
 
                     // Adiciona os parâmetros ao comando para evitar SQL Injection                    
                     cmd.Parameters.AddWithValue("@nome", txtNome.Text);
                     cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+                    cmd.Parameters.AddWithValue("@telefone", mtxTelefone.Text);
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
 
@@ -102,14 +104,14 @@ namespace CRUD
                 else
                 {
                     // Atualiza Contato
-                    cmd.CommandText = "UPDATE Contatos SET " +
+                    cmd.CommandText = "UPDATE contatos SET " +
                                       "nome=@nome, email=@email, telefone=@telefone " +
                                       "WHERE id=@id ";
 
                     // Adiciona os parâmetros ao comando para evitar SQL Injection
                     cmd.Parameters.AddWithValue("@nome", txtNome.Text);
                     cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                    cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+                    cmd.Parameters.AddWithValue("@telefone", mtxTelefone.Text);
                     // Adiciona o ID do contato selecionado para atualizar o registro correto
                     cmd.Parameters.AddWithValue("@id", id_contato_selecionado);
                     // Prepara o comando para execução
@@ -138,69 +140,6 @@ namespace CRUD
             zerar_formulario();
         }
 
-        //Executa a consulta de contatos com base no texto digitado no campo txtLocalizar
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            MySqlConnection Conexao = null;
-            try
-            {
-                Conexao = new MySqlConnection(connString);
-
-                Conexao.Open();
-
-                //Cria um comando SQL para consultar contatos 
-                MySqlCommand cmd = new MySqlCommand();
-
-                //Define a conexão do comando com a conexão do banco de dados
-                cmd.Connection = Conexao;
-
-                //Define o comando SQL para buscar contatos com base no nome ou email
-                cmd.CommandText = "SELECT * FROM Contatos WHERE nome LIKE @q OR email LIKE @q ";
-
-                
-
-                //Adiciona o parâmetro @q com o valor do texto digitado no campo txtLocalizar
-                cmd.Parameters.AddWithValue("@q", "%" + txtLocalizar.Text + "%");
-
-                cmd.Prepare();
-
-                //Executa o comando e obtém os resultados
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                //Limpa a lista de contatos antes de adicionar os resultados da consulta
-                lstContatos.Items.Clear();
-
-                //Percorre os resultados da consulta e adiciona cada contato à lista lstContatos
-                while (reader.Read())
-                {
-                    //Cria um vetor de strings para armazenar os dados do contato
-                    string[] row =
-                    {
-                        reader[0].ToString(),
-                        reader[1].ToString(),
-                        reader[2].ToString(),
-                        reader[3].ToString()
-                    };
-
-                    //Cria um novo ListViewItem com os dados do contato
-                    lstContatos.Items.Add(new ListViewItem(row));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao consultar contatos!" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                //Certifica-se de que a conexão com o banco de dados seja fechada,
-                //independentemente de ocorrer um erro ou não
-                if (Conexao != null)
-                {
-                    Conexao.Close();
-                }
-            }
-        }
-
         //Método para carregar os contatos do banco de dados e exibi-los na lista lstContatos
         private void CarregarContatos()
         {
@@ -209,7 +148,7 @@ namespace CRUD
                 Conexao = new MySqlConnection(connString);
                 // Cria a consulta SQL para selecionar todos os contatos e ordená-los
                 // por ID em ordem decrescente
-                string sql = "SELECT * FROM Contatos ORDER BY id DESC ";
+                string sql = "SELECT * FROM contatos ORDER BY id DESC ";
 
                 // Cria um comando MySqlCommand com a consulta SQL e a conexão
                 MySqlCommand comando = new MySqlCommand(sql, Conexao);
@@ -254,7 +193,7 @@ namespace CRUD
 
             txtNome.Text = String.Empty;
             txtEmail.Text = "";
-            txtTelefone.Text = "";
+            mtxTelefone.Text = "";
 
             txtNome.Focus();
 
@@ -288,7 +227,7 @@ namespace CRUD
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = Conexao;
 
-                    cmd.CommandText = "DELETE FROM Contatos WHERE id=@id";
+                    cmd.CommandText = "DELETE FROM contatos WHERE id=@id";
                     cmd.Parameters.AddWithValue("@id", id_contato_selecionado);
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
@@ -337,10 +276,73 @@ namespace CRUD
                 // Preenche os campos do formulário com os dados do contato selecionado
                 txtNome.Text = item.SubItems[1].Text;
                 txtEmail.Text = item.SubItems[2].Text;
-                txtTelefone.Text = item.SubItems[3].Text;
+                mtxTelefone.Text = item.SubItems[3].Text;
 
                 // Habilita o botão de editar, pois um contato foi selecionado
                 btnEditar.Enabled = true;
+            }
+        }
+
+        //Executa a consulta de contatos com base no texto digitado no campo txtLocalizar
+        private void txtLocalizar_TextChanged(object sender, EventArgs e)
+        {
+            MySqlConnection Conexao = null;
+            try
+            {
+                Conexao = new MySqlConnection(connString);
+
+                Conexao.Open();
+
+                //Cria um comando SQL para consultar contatos 
+                MySqlCommand cmd = new MySqlCommand();
+
+                //Define a conexão do comando com a conexão do banco de dados
+                cmd.Connection = Conexao;
+
+                //Define o comando SQL para buscar contatos com base no nome ou email
+                cmd.CommandText = "SELECT * FROM contatos WHERE nome LIKE @q OR email LIKE @q ";
+
+
+
+                //Adiciona o parâmetro @q com o valor do texto digitado no campo txtLocalizar
+                cmd.Parameters.AddWithValue("@q", "%" + txtLocalizar.Text + "%");
+
+                cmd.Prepare();
+
+                //Executa o comando e obtém os resultados
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                //Limpa a lista de contatos antes de adicionar os resultados da consulta
+                lstContatos.Items.Clear();
+
+                //Percorre os resultados da consulta e adiciona cada contato à lista lstContatos
+                while (reader.Read())
+                {
+                    //Cria um vetor de strings para armazenar os dados do contato
+                    string[] row =
+                    {
+                        reader[0].ToString(),
+                        reader[1].ToString(),
+                        reader[2].ToString(),
+                        reader[3].ToString()
+                    };
+
+                    //Cria um novo ListViewItem com os dados do contato
+                    lstContatos.Items.Add(new ListViewItem(row));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar contatos!" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //Certifica-se de que a conexão com o banco de dados seja fechada,
+                //independentemente de ocorrer um erro ou não
+                if (Conexao != null)
+                {
+                    Conexao.Close();
+                }
             }
         }
     }
