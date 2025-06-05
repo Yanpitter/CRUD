@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             txtNome = new TextBox();
-            txtTelefone = new TextBox();
             txtEmail = new TextBox();
             btnSalvar = new Button();
             lstContatos = new ListView();
             txtLocalizar = new TextBox();
-            btnConsultar = new Button();
             label4 = new Label();
             btnEditar = new Button();
             btnExcluir = new Button();
+            mtxTelefone = new MaskedTextBox();
+            btnAnterior = new Button();
+            btnProxima = new Button();
             SuspendLayout();
             // 
             // label1
@@ -72,20 +74,24 @@
             // 
             // txtNome
             // 
+            txtNome.BorderStyle = BorderStyle.FixedSingle;
             txtNome.Location = new Point(12, 27);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(339, 23);
             txtNome.TabIndex = 3;
             // 
+
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(12, 71);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(191, 23);
-            txtTelefone.TabIndex = 4;
+            mtxTelefone.Location = new Point(12, 71);
+            mtxTelefone.Name = "txtTelefone";
+            mtxTelefone.Size = new Size(191, 23);
+            mtxTelefone.TabIndex = 4;
+            mtxTelefone.KeyPress += txtTelefone_KeyPress;
             // 
             // txtEmail
             // 
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Location = new Point(12, 115);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(339, 23);
@@ -93,40 +99,37 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.ImageAlign = ContentAlignment.BottomCenter;
-            btnSalvar.Location = new Point(12, 341);
+            btnSalvar.Image = Properties.Resources.Salvar;
+            btnSalvar.Location = new Point(12, 321);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(114, 23);
+            btnSalvar.Size = new Size(96, 43);
             btnSalvar.TabIndex = 6;
-            btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // lstContatos
             // 
-            lstContatos.Location = new Point(373, 71);
+            lstContatos.Location = new Point(373, 57);
             lstContatos.Name = "lstContatos";
-            lstContatos.Size = new Size(450, 293);
+            lstContatos.Size = new Size(462, 307);
             lstContatos.TabIndex = 7;
             lstContatos.UseCompatibleStateImageBehavior = false;
             lstContatos.SelectedIndexChanged += lstContatos_SelectedIndexChanged_1;
             // 
             // txtLocalizar
             // 
+            txtLocalizar.BorderStyle = BorderStyle.FixedSingle;
             txtLocalizar.Location = new Point(373, 28);
             txtLocalizar.Name = "txtLocalizar";
-            txtLocalizar.Size = new Size(331, 23);
+            txtLocalizar.Size = new Size(462, 23);
+            txtLocalizar.TabIndex = 8;
+            txtLocalizar.TextChanged += txtLocalizar_TextChanged;
+            txtLocalizar.Size = new Size(371, 23);
             txtLocalizar.TabIndex = 8;
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(710, 27);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(113, 23);
-            btnConsultar.TabIndex = 9;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = true;
-            btnConsultar.Click += btnConsultar_Click;
+            
             // 
             // label4
             // 
@@ -139,42 +142,73 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(132, 341);
+            btnEditar.Image = Properties.Resources.imagem__1_;
+            btnEditar.Location = new Point(133, 321);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(111, 23);
+            btnEditar.Size = new Size(96, 43);
             btnEditar.TabIndex = 11;
-            btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(249, 341);
+            btnExcluir.Image = Properties.Resources.Apagar;
+            btnExcluir.Location = new Point(255, 321);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(102, 23);
+            btnExcluir.Size = new Size(96, 43);
             btnExcluir.TabIndex = 12;
-            btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
+            // 
+            // mtxTelefone
+            // 
+            mtxTelefone.Location = new Point(12, 71);
+            mtxTelefone.Mask = "(99) 00000-0000";
+            mtxTelefone.Name = "mtxTelefone";
+            mtxTelefone.Size = new Size(100, 23);
+            mtxTelefone.TabIndex = 13;
+            // 
+            // btnAnterior
+            // 
+            btnAnterior.Location = new Point(385, 330);
+            btnAnterior.Name = "btnAnterior";
+            btnAnterior.Size = new Size(75, 23);
+            btnAnterior.TabIndex = 14;
+            btnAnterior.Text = "Anterior";
+            btnAnterior.UseVisualStyleBackColor = true;
+            btnAnterior.Click += btnAnterior_Click;
+            // 
+            // btnProxima
+            // 
+            btnProxima.Location = new Point(466, 330);
+            btnProxima.Name = "btnProxima";
+            btnProxima.Size = new Size(75, 23);
+            btnProxima.TabIndex = 15;
+            btnProxima.Text = "Próxima";
+            btnProxima.UseVisualStyleBackColor = true;
+            btnProxima.Click += btnProxima_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(847, 376);
+            Controls.Add(btnProxima);
+            Controls.Add(btnAnterior);
+            Controls.Add(mtxTelefone);
             Controls.Add(btnExcluir);
             Controls.Add(btnEditar);
             Controls.Add(label4);
-            Controls.Add(btnConsultar);
             Controls.Add(txtLocalizar);
             Controls.Add(lstContatos);
             Controls.Add(btnSalvar);
             Controls.Add(txtEmail);
-            Controls.Add(txtTelefone);
             Controls.Add(txtNome);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
@@ -189,14 +223,15 @@
         private Label label2;
         private Label label3;
         private TextBox txtNome;
-        private TextBox txtTelefone;
         private TextBox txtEmail;
         private Button btnSalvar;
         private ListView lstContatos;
         private TextBox txtLocalizar;
-        private Button btnConsultar;
         private Label label4;
         private Button btnEditar;
         private Button btnExcluir;
+        private MaskedTextBox mtxTelefone;
+        private Button btnAnterior;
+        private Button btnProxima;
     }
 }
