@@ -16,7 +16,7 @@ namespace CRUD
 {
     public partial class Form1 : Form
     {
-        
+
         // Variável de conexão com o banco de dados
         MySqlConnection Conexao;
         //ff
@@ -28,6 +28,8 @@ namespace CRUD
         private int? id_contato_selecionado = null;
         public Form1()
         {
+            // ### LINHA ADICIONADA PARA CENTRALIZAR O FORMULÁRIO ###
+            this.StartPosition = FormStartPosition.CenterScreen;
             // Inicializa os componentes do list
             InitializeComponent();
 
@@ -94,10 +96,6 @@ namespace CRUD
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Contato Inserido com Sucesso!",
-                                    "Sucesso!", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
                 }
                 else
                 {
@@ -123,6 +121,9 @@ namespace CRUD
                 }
                 // Evento que carrega os contatos do banco de dados ao iniciar o formulário 
                 CarregarContatos();
+                MessageBox.Show("Contato Inserido com Sucesso!",
+                                   "Sucesso!", MessageBoxButtons.OK,
+                                   MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -157,7 +158,7 @@ namespace CRUD
                 //Define o comando SQL para buscar contatos com base no nome ou email
                 cmd.CommandText = "SELECT * FROM Contatos WHERE nome LIKE @q OR email LIKE @q ";
 
-                
+
 
                 //Adiciona o parâmetro @q com o valor do texto digitado no campo txtLocalizar
                 cmd.Parameters.AddWithValue("@q", "%" + txtLocalizar.Text + "%");
@@ -293,12 +294,12 @@ namespace CRUD
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Contato excluído com sucesso!",
-                                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     CarregarContatos();
                     lstContatos.Refresh();
                     zerar_formulario();
+
+                    MessageBox.Show("Contato excluído com sucesso!",
+                                   "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (MySqlException ex)
                 {
@@ -341,6 +342,17 @@ namespace CRUD
 
                 // Habilita o botão de editar, pois um contato foi selecionado
                 btnEditar.Enabled = true;
+            }
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica se a tecla pressionada não é um controle (como Backspace)
+            // e não é um dígito.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Se não for um número nem um controle, impede a entrada do caractere
+                e.Handled = true;
             }
         }
     }
