@@ -80,17 +80,15 @@
             txtNome.Size = new Size(339, 23);
             txtNome.TabIndex = 3;
             // 
-<<<<<<< HEAD
-=======
+
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(12, 71);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(191, 23);
-            txtTelefone.TabIndex = 4;
-            txtTelefone.KeyPress += txtTelefone_KeyPress;
+            mtxTelefone.Location = new Point(12, 71);
+            mtxTelefone.Name = "txtTelefone";
+            mtxTelefone.Size = new Size(191, 23);
+            mtxTelefone.TabIndex = 4;
+            mtxTelefone.KeyPress += txtTelefone_KeyPress;
             // 
->>>>>>> grupo1
             // txtEmail
             // 
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
@@ -123,24 +121,15 @@
             txtLocalizar.BorderStyle = BorderStyle.FixedSingle;
             txtLocalizar.Location = new Point(373, 28);
             txtLocalizar.Name = "txtLocalizar";
-<<<<<<< HEAD
             txtLocalizar.Size = new Size(462, 23);
             txtLocalizar.TabIndex = 8;
             txtLocalizar.TextChanged += txtLocalizar_TextChanged;
-=======
             txtLocalizar.Size = new Size(371, 23);
             txtLocalizar.TabIndex = 8;
             // 
             // btnConsultar
             // 
-            btnConsultar.Image = Properties.Resources.Pesquisar;
-            btnConsultar.Location = new Point(750, 27);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(73, 38);
-            btnConsultar.TabIndex = 9;
-            btnConsultar.UseVisualStyleBackColor = true;
-            btnConsultar.Click += btnConsultar_Click;
->>>>>>> grupo1
+            
             // 
             // label4
             // 
@@ -218,11 +207,8 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-<<<<<<< HEAD
             FormBorderStyle = FormBorderStyle.FixedSingle;
-=======
             Icon = (Icon)resources.GetObject("$this.Icon");
->>>>>>> grupo1
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";

@@ -18,12 +18,10 @@ namespace CRUD
 {
     public partial class Form1 : Form
     {
-<<<<<<< HEAD
         private int paginaAtual = 1;
         private int totalPaginas = 1;
         private int registrosPorPagina = 10;
-=======
->>>>>>> grupo1
+
 
         // Variável de conexão com o banco de dados
         MySqlConnection Conexao;
@@ -35,12 +33,9 @@ namespace CRUD
         private int? id_contato_selecionado = null;
         public Form1()
         {
-<<<<<<< HEAD
             #region Configurações da ListView
-=======
             // ### LINHA ADICIONADA PARA CENTRALIZAR O FORMULÁRIO ###
             this.StartPosition = FormStartPosition.CenterScreen;
->>>>>>> grupo1
             // Inicializa os componentes do list
             InitializeComponent();
 
@@ -133,7 +128,10 @@ namespace CRUD
                     cmd.Parameters.AddWithValue("@telefone", mtxTelefone.Text);
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
-
+                    CarregarContatos();
+                    MessageBox.Show("Contato Inserido com Sucesso!",
+                                   "Sucesso!", MessageBoxButtons.OK,
+                                   MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -152,16 +150,14 @@ namespace CRUD
                     cmd.Prepare();
                     // Executa o comando para atualizar o contato
                     cmd.ExecuteNonQuery();
-
+                    CarregarContatos();
                     MessageBox.Show("Contato Atualizado com Sucesso!",
                                     "Sucesso!", MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
                 }
                 // Evento que carrega os contatos do banco de dados ao iniciar o formulário 
-                CarregarContatos();
-                MessageBox.Show("Contato Inserido com Sucesso!",
-                                   "Sucesso!", MessageBoxButtons.OK,
-                                   MessageBoxIcon.Information);
+                
+                
             }
             catch (Exception ex)
             {
@@ -177,8 +173,7 @@ namespace CRUD
             zerar_formulario();
         }
 
-<<<<<<< HEAD
-=======
+
         //Executa a consulta de contatos com base no texto digitado no campo txtLocalizar
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -242,7 +237,6 @@ namespace CRUD
             }
         }
 
->>>>>>> grupo1
         //Método para carregar os contatos do banco de dados e exibi-los na lista lstContatos
         private void CarregarContatos(int pagina = 1)
         {
@@ -394,7 +388,6 @@ namespace CRUD
             }
         }
 
-<<<<<<< HEAD
         //Executa a consulta de contatos com base no texto digitado no campo txtLocalizar
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
@@ -474,7 +467,9 @@ namespace CRUD
             {
                 paginaAtual++;
                 CarregarContatos(paginaAtual);
-=======
+            }
+        }
+
         private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Verifica se a tecla pressionada não é um controle (como Backspace)
@@ -483,7 +478,6 @@ namespace CRUD
             {
                 // Se não for um número nem um controle, impede a entrada do caractere
                 e.Handled = true;
->>>>>>> grupo1
             }
         }
     }

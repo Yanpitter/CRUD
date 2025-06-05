@@ -12,13 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-<<<<<<< HEAD
       "D:\\Users\\1031936\\.dotnet\\store\\|arch|\\|tfm|",
       "D:\\Users\\1031936\\.nuget\\packages",
-=======
-      "D:\\Users\\1032761\\.dotnet\\store\\|arch|\\|tfm|",
-      "D:\\Users\\1032761\\.nuget\\packages",
->>>>>>> grupo1
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

@@ -103,7 +103,6 @@ D:\Users\750233\Downloads\CRUDTURMA\CRUD\obj\Debug\net8.0-windows\CRUD.pdb
 D:\Users\750233\Downloads\CRUDTURMA\CRUD\obj\Debug\net8.0-windows\CRUD.genruntimeconfig.cache
 D:\Users\750233\Downloads\CRUDTURMA\CRUD\obj\Debug\net8.0-windows\ref\CRUD.dll
 <<<<<<< HEAD
-<<<<<<< HEAD
 D:\Users\1031936\OneDrive - SENAC em Minas - EDU\Área de Trabalho\CRUD\CRUD\bin\Debug\net8.0-windows\CRUD.exe
 D:\Users\1031936\OneDrive - SENAC em Minas - EDU\Área de Trabalho\CRUD\CRUD\bin\Debug\net8.0-windows\CRUD.deps.json
 D:\Users\1031936\OneDrive - SENAC em Minas - EDU\Área de Trabalho\CRUD\CRUD\bin\Debug\net8.0-windows\CRUD.runtimeconfig.json
@@ -176,7 +175,6 @@ D:\Users\750233\Downloads\CRUD_TURMA\CRUD\CRUD\obj\Debug\net8.0-windows\CRUD.pdb
 D:\Users\750233\Downloads\CRUD_TURMA\CRUD\CRUD\obj\Debug\net8.0-windows\CRUD.genruntimeconfig.cache
 D:\Users\750233\Downloads\CRUD_TURMA\CRUD\CRUD\obj\Debug\net8.0-windows\ref\CRUD.dll
 >>>>>>> grupo2
-=======
 D:\Users\1032761\Desktop\CRUD_GERAL2\CRUD\CRUD\bin\Debug\net8.0-windows\CRUD.exe
 D:\Users\1032761\Desktop\CRUD_GERAL2\CRUD\CRUD\bin\Debug\net8.0-windows\CRUD.deps.json
 D:\Users\1032761\Desktop\CRUD_GERAL2\CRUD\CRUD\bin\Debug\net8.0-windows\CRUD.runtimeconfig.json
@@ -214,3 +212,4 @@ D:\Users\1032761\Desktop\CRUD_GERAL2\CRUD\CRUD\obj\Debug\net8.0-windows\CRUD.gen
 D:\Users\1032761\Desktop\CRUD_GERAL2\CRUD\CRUD\obj\Debug\net8.0-windows\ref\CRUD.dll
 D:\Users\1032761\Desktop\CRUD_GERAL2\CRUD\CRUD\obj\Debug\net8.0-windows\CRUD.Properties.Resources.resources
 >>>>>>> grupo1
+D:\Users\1031936\OneDrive - SENAC em Minas - EDU\Área de Trabalho\CRUD\CRUD\obj\Debug\net8.0-windows\CRUD.Properties.Resources.resources
