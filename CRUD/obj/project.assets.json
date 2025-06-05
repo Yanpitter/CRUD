@@ -1609,23 +1609,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "D:\\Users\\1031936\\.nuget\\packages\\": {},
+=======
+    "D:\\Users\\1032761\\.nuget\\packages\\": {},
+>>>>>>> grupo1
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\Área de Trabalho\\CRUD\\CRUD\\CRUD.csproj",
       "projectName": "CRUD",
       "projectPath": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\Área de Trabalho\\CRUD\\CRUD\\CRUD.csproj",
       "packagesPath": "D:\\Users\\1031936\\.nuget\\packages\\",
       "outputPath": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\Área de Trabalho\\CRUD\\CRUD\\obj\\",
+=======
+      "projectUniqueName": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\CRUD.csproj",
+      "projectName": "CRUD",
+      "projectPath": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\CRUD.csproj",
+      "packagesPath": "D:\\Users\\1032761\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\obj\\",
+>>>>>>> grupo1
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "D:\\Users\\1031936\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "D:\\Users\\1032761\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> grupo1
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

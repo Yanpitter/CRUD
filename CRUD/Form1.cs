@@ -18,9 +18,12 @@ namespace CRUD
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         private int paginaAtual = 1;
         private int totalPaginas = 1;
         private int registrosPorPagina = 10;
+=======
+>>>>>>> grupo1
 
         // Variável de conexão com o banco de dados
         MySqlConnection Conexao;
@@ -32,7 +35,12 @@ namespace CRUD
         private int? id_contato_selecionado = null;
         public Form1()
         {
+<<<<<<< HEAD
             #region Configurações da ListView
+=======
+            // ### LINHA ADICIONADA PARA CENTRALIZAR O FORMULÁRIO ###
+            this.StartPosition = FormStartPosition.CenterScreen;
+>>>>>>> grupo1
             // Inicializa os componentes do list
             InitializeComponent();
 
@@ -126,10 +134,6 @@ namespace CRUD
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Contato Inserido com Sucesso!",
-                                    "Sucesso!", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
-
                 }
                 else
                 {
@@ -155,6 +159,9 @@ namespace CRUD
                 }
                 // Evento que carrega os contatos do banco de dados ao iniciar o formulário 
                 CarregarContatos();
+                MessageBox.Show("Contato Inserido com Sucesso!",
+                                   "Sucesso!", MessageBoxButtons.OK,
+                                   MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -170,6 +177,72 @@ namespace CRUD
             zerar_formulario();
         }
 
+<<<<<<< HEAD
+=======
+        //Executa a consulta de contatos com base no texto digitado no campo txtLocalizar
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection Conexao = null;
+            try
+            {
+                Conexao = new MySqlConnection(connString);
+
+                Conexao.Open();
+
+                //Cria um comando SQL para consultar contatos 
+                MySqlCommand cmd = new MySqlCommand();
+
+                //Define a conexão do comando com a conexão do banco de dados
+                cmd.Connection = Conexao;
+
+                //Define o comando SQL para buscar contatos com base no nome ou email
+                cmd.CommandText = "SELECT * FROM Contatos WHERE nome LIKE @q OR email LIKE @q ";
+
+
+
+                //Adiciona o parâmetro @q com o valor do texto digitado no campo txtLocalizar
+                cmd.Parameters.AddWithValue("@q", "%" + txtLocalizar.Text + "%");
+
+                cmd.Prepare();
+
+                //Executa o comando e obtém os resultados
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                //Limpa a lista de contatos antes de adicionar os resultados da consulta
+                lstContatos.Items.Clear();
+
+                //Percorre os resultados da consulta e adiciona cada contato à lista lstContatos
+                while (reader.Read())
+                {
+                    //Cria um vetor de strings para armazenar os dados do contato
+                    string[] row =
+                    {
+                        reader[0].ToString(),
+                        reader[1].ToString(),
+                        reader[2].ToString(),
+                        reader[3].ToString()
+                    };
+
+                    //Cria um novo ListViewItem com os dados do contato
+                    lstContatos.Items.Add(new ListViewItem(row));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao consultar contatos!" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //Certifica-se de que a conexão com o banco de dados seja fechada,
+                //independentemente de ocorrer um erro ou não
+                if (Conexao != null)
+                {
+                    Conexao.Close();
+                }
+            }
+        }
+
+>>>>>>> grupo1
         //Método para carregar os contatos do banco de dados e exibi-los na lista lstContatos
         private void CarregarContatos(int pagina = 1)
         {
@@ -270,12 +343,12 @@ namespace CRUD
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Contato excluído com sucesso!",
-                                    "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     CarregarContatos();
                     lstContatos.Refresh();
                     zerar_formulario();
+
+                    MessageBox.Show("Contato excluído com sucesso!",
+                                   "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (MySqlException ex)
                 {
@@ -321,6 +394,7 @@ namespace CRUD
             }
         }
 
+<<<<<<< HEAD
         //Executa a consulta de contatos com base no texto digitado no campo txtLocalizar
         private void txtLocalizar_TextChanged(object sender, EventArgs e)
         {
@@ -400,6 +474,16 @@ namespace CRUD
             {
                 paginaAtual++;
                 CarregarContatos(paginaAtual);
+=======
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica se a tecla pressionada não é um controle (como Backspace)
+            // e não é um dígito.
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                // Se não for um número nem um controle, impede a entrada do caractere
+                e.Handled = true;
+>>>>>>> grupo1
             }
         }
     }

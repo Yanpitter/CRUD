@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\",
   "Documents": [
     {
@@ -12,6 +13,21 @@
     {
       "AbsoluteMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|d:\\users\\1031936\\onedrive - senac em minas - edu\\\u00E1rea de trabalho\\crud\\crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|solutionrelative:crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+=======
+  "WorkspaceRootPath": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|d:\\users\\1032761\\desktop\\crud_geral2\\crud\\crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|solutionrelative:crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|solutionrelative:crud\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|d:\\users\\1032761\\desktop\\crud_geral2\\crud\\crud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C147E0-CDAC-4342-A3D3-44C218A3F0EC}|CRUD\\CRUD.csproj|solutionrelative:crud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> grupo1
     }
   ],
   "DocumentGroupContainers": [
@@ -23,6 +39,10 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -38,9 +58,15 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
+<<<<<<< HEAD
               "DocumentMoniker": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\CRUD\\Form1.cs",
               "RelativeDocumentMoniker": "CRUD\\Form1.cs",
               "ToolTip": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\CRUD\\Form1.cs",
+=======
+              "DocumentMoniker": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\Form1.cs",
+              "RelativeDocumentMoniker": "CRUD\\Form1.cs",
+              "ToolTip": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\Form1.cs",
+>>>>>>> grupo1
               "RelativeToolTip": "CRUD\\Form1.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAAAjwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -50,14 +76,33 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< HEAD
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\CRUD\\Form1.cs",
               "RelativeDocumentMoniker": "CRUD\\Form1.cs",
               "ToolTip": "D:\\Users\\1031936\\OneDrive - SENAC em Minas - EDU\\\u00C1rea de Trabalho\\CRUD\\CRUD\\Form1.cs [Projeto]",
               "RelativeToolTip": "CRUD\\Form1.cs [Projeto]",
+=======
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\Program.cs",
+              "RelativeDocumentMoniker": "CRUD\\Program.cs",
+              "ToolTip": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\Program.cs",
+              "RelativeToolTip": "CRUD\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T00:23:25.502Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-06-04T00:23:39.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "D:\\Users\\1032761\\Desktop\\CRUD_GERAL2\\CRUD\\CRUD\\Form1.cs",
+              "RelativeDocumentMoniker": "CRUD\\Form1.cs",
+              "ToolTip": "D:\\Users\\750233\\Downloads\\CRUD_TURMA\\CRUD\\CRUD\\Form1.cs [Projeto]",
+              "RelativeToolTip": "..\\..\\..\\..\\750233\\Downloads\\CRUD_TURMA\\CRUD\\CRUD\\Form1.cs [Projeto]",
+>>>>>>> grupo1
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T00:23:25.502Z"
             }
           ]
         }

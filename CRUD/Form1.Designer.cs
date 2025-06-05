@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -79,6 +80,17 @@
             txtNome.Size = new Size(339, 23);
             txtNome.TabIndex = 3;
             // 
+<<<<<<< HEAD
+=======
+            // txtTelefone
+            // 
+            txtTelefone.Location = new Point(12, 71);
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.Size = new Size(191, 23);
+            txtTelefone.TabIndex = 4;
+            txtTelefone.KeyPress += txtTelefone_KeyPress;
+            // 
+>>>>>>> grupo1
             // txtEmail
             // 
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
@@ -89,12 +101,11 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.ImageAlign = ContentAlignment.BottomCenter;
-            btnSalvar.Location = new Point(12, 341);
+            btnSalvar.Image = Properties.Resources.Salvar;
+            btnSalvar.Location = new Point(12, 321);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(114, 23);
+            btnSalvar.Size = new Size(96, 43);
             btnSalvar.TabIndex = 6;
-            btnSalvar.Text = "Salvar";
             btnSalvar.UseVisualStyleBackColor = true;
             btnSalvar.Click += btnSalvar_Click;
             // 
@@ -112,9 +123,24 @@
             txtLocalizar.BorderStyle = BorderStyle.FixedSingle;
             txtLocalizar.Location = new Point(373, 28);
             txtLocalizar.Name = "txtLocalizar";
+<<<<<<< HEAD
             txtLocalizar.Size = new Size(462, 23);
             txtLocalizar.TabIndex = 8;
             txtLocalizar.TextChanged += txtLocalizar_TextChanged;
+=======
+            txtLocalizar.Size = new Size(371, 23);
+            txtLocalizar.TabIndex = 8;
+            // 
+            // btnConsultar
+            // 
+            btnConsultar.Image = Properties.Resources.Pesquisar;
+            btnConsultar.Location = new Point(750, 27);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(73, 38);
+            btnConsultar.TabIndex = 9;
+            btnConsultar.UseVisualStyleBackColor = true;
+            btnConsultar.Click += btnConsultar_Click;
+>>>>>>> grupo1
             // 
             // label4
             // 
@@ -127,21 +153,21 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(132, 341);
+            btnEditar.Image = Properties.Resources.imagem__1_;
+            btnEditar.Location = new Point(133, 321);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(111, 23);
+            btnEditar.Size = new Size(96, 43);
             btnEditar.TabIndex = 11;
-            btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
-            btnExcluir.Location = new Point(249, 341);
+            btnExcluir.Image = Properties.Resources.Apagar;
+            btnExcluir.Location = new Point(255, 321);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(102, 23);
+            btnExcluir.Size = new Size(96, 43);
             btnExcluir.TabIndex = 12;
-            btnExcluir.Text = "Excluir";
             btnExcluir.UseVisualStyleBackColor = true;
             btnExcluir.Click += btnExcluir_Click;
             // 
@@ -192,7 +218,11 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+<<<<<<< HEAD
             FormBorderStyle = FormBorderStyle.FixedSingle;
+=======
+            Icon = (Icon)resources.GetObject("$this.Icon");
+>>>>>>> grupo1
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "Form1";
